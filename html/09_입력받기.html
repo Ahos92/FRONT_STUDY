@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자로부터 입력 받기</title>
+    <style>
+        #t1 {
+            background-color: rgb(40, 53, 18);
+        }
+
+        tr > th{
+            background-color: rgb(243, 228, 16);
+        }
+
+        tr > td{
+            background-color: rgb(240, 233, 141);
+        }
+
+        #header * {
+            background-color: rgb(175, 98, 9);
+        }
+    </style>
+</head>
+<body>
+
+    <h3># Input 태그를 이용해 사용자로부터 다양한 입력을 받을 수 있다.</h3>
+
+    <ul>
+        <li>사용자의 입력들은 폼(form)단위로 묶어놓아야 한다.</li>
+        <li>해당 form 내부에서 submit이 발생하면 데이터를 전송한다.</li>
+        <li>input태그를 form태그의 외부에서 추가할 수도 있다.</li>
+        <li>★★★★★ 데이터 전송시 input태그의 name 속성이 key 역할을 한다.</li>
+        <li>★★★★★ 데이터 전송시 input태그에 사용자가 입력한 내용이 value 역할을 한다.</li>
+        <li>input태그의 value속성이 value역할을 할 때도 있다.</li>
+    </ul>
+
+    <!--
+        # form태그 
+            action : submit시에 데이터를 전송할 URL
+            method : submit시에 데이터 전송 방식 (GET, POST ...)
+    -->
+    <form name="form1" id="form1" action="./09_입력받기.html" method="GET"  autocomplete="off">
+    <table border="2" align="center" id="t1">
+        <tr id="header">
+            <th>Type</th>
+            <th>모양</th>
+            <th>설명</th>
+        </tr>
+        <tr>
+            <th>type="text"</th>
+            <td><input type="text" name="user_id" value="admin" maxlength="6"></td>
+            <td align="center">일반적인 텍스트를 입력하는 칸</td>
+        </tr>
+        <tr>
+            <th>type="password"</th>
+            <td><input autofocus required type="password" name="user_password" placeholder="password"></td>
+            <td align="center">입력하는 내용이 가려지는 칸</td>
+        </tr>
+        <tr>
+            <th>type="submit"</th>
+            <td>
+                <input type="submit">
+                <input type="submit" value="확인">
+                <input type="submit" value="로그인">
+            </td>
+            <td align="center">사용자가 input태그에 입력해놓은 데이터를 전송하는 버튼</td>
+        </tr>
+        <tr>
+            <th>type="reset"</th>
+            <td>
+                <input type="reset">
+                <input type="reset" value="취소">
+                <input type="reset" value="cancel">
+            </td>
+            <td align="center">사용자가 input태그에 입력해놓은 데이터를 초기화하는 버튼</td>
+        </tr>
+        <tr>
+            <th>type="radio"</th>
+            <td>
+                <!-- 
+                    radio / checkbox로 value값을 보내고 싶으면 value속성을 지정해주면 됨
+                    id로 label태그 for속성에 주어 텍스트 클릭시에도 체크가 됨
+                -->
+                <label for="one">1년차</label> <input id="one" type="radio" name="career" value="one_year" checked>
+                <label for="two">2년차</label> <input id="two" type="radio" name="career" value="two_year">
+                <label for="three">3년차</label> <input id="three" type="radio" name="career" value="three_year" checked>
+            </td>
+            <td align="center">name속성이 같을 때 여러가지 중 하나만 선택할 수 있는 버튼</td>
+        </tr>
+        <tr>
+            <th>type="checkbox"</th>
+            <td>
+                <label for="hobby1">축구</label> <input type="checkbox" name="hobby" id="hobby1" value="soccer" checked>
+                <label for="hobby2">야구</label> <input type="checkbox" name="hobby" id="hobby2" value="baseball">
+                <label for="hobby3">농구</label> <input type="checkbox" name="hobby" id="hobby3" value="basketball" checked>
+                <label for="hobby4">피구</label> <input type="checkbox" name="hobby" id="hobby4" value="tongki">
+                <label for="hobby5">배구</label> <input type="checkbox" name="hobby" id="hobby5" value="volleyball">
+            </td>
+            <td align="center">동시에 여러가지를 선택할 수 있는 버튼</td>
+        </tr>
+        <tr>
+            <th>type="email"</th>
+            <td><input disabled type="email" value="aaa@aaaa.com"></td>
+            <td align="center">해당 텍스트가 이메일인지 검사해준다.</td>
+        </tr>
+        <tr>
+            <th>&lt;select&gt;</th>
+            <td>
+                country:
+                <select required name="nation" id="">
+                    <option value="">--- 국가를 선택해주세요 ---</option>
+                    <option value="south_kor">한국</option>
+                    <option value="north_kor">북한</option>
+                    <option value="america">미국</option>
+                    <option value="china">중국</option>
+                    <option value="england">영국</option>
+                </select>
+            </td>
+            <td align="center">사용자가 여러 옵션 중 하나를 선택할 수 있다.</td>
+        </tr>
+        <tr>
+            <th>&lt;textarea&gt;</th>
+            <td><textarea name="content" id="" cols="30" rows="6"></textarea></td>
+            <td align="center">
+                많은 양의 텍스트를 입력할 때 사용<br>
+                <br>
+                ※ GET방식에는 전송 데이터 길이제한이 있으므로<br>
+                    POST방식을 사용하는 것이 좋다.
+            </td>
+        </tr>
+        <tr>
+            <th>type="color"</th>
+            <td><input type="color" name="favColor"></td>
+            <td align="center">색상 선택 (ex : #ffffff)</td>
+        </tr>
+        <tr>
+            <th>type="date"</th>
+            <td><input type="date" name="birthday"></td>
+            <td align="center">날짜 선택 (ex : 2020-12-31)</td>
+        </tr>
+        <tr>
+            <th>type="search"</th>
+            <td><input type="search" name="search_value"></td>
+            <td align="center">검색어를 입력하는 필드를 생성한다.</td>
+        </tr>
+        <tr>
+            <th>type="tel"</th>
+            <td><input readonly type="tel" name="tel" value="1234-1234"></td>
+            <td align="center">전화번호를 입력하는 필드를 생성한다.</td>
+        </tr>
+        <tr>
+            <th>type="url"</th>
+            <td><input type="url"></td>
+            <td align="center">
+                url을 입력하는 필드를 생성한다. <br>
+                ※ 특정 기기는 url속성이 들어간 입력란에 <br>
+                    알아서 .com을 붙여주기도 한다.
+            </td>
+        </tr>
+        <tr>
+            <th>type="range"</th>
+            <td>volume : <input type="range" name="vol" min="0" max="100" step="10"></td>
+            <td align="center"></td>
+        </tr>
+    </table>
+    </form>
+
+    <ul>
+        <li>checked : 페이지가 로드되었을때 미리 체크해놓는다.</li>
+        <li>disabled : 해당 필드를 사용할 수 없게 된다 (전송에서 제외)</li>
+        <li>readonly : 해당 필드를 수정할 수 없게 된다 (전송에는 포함)</li>
+        <li>required : 해당 필드의 값을 반드시 채워야 한다.</li>
+        <li>pattern : 해당 필드에 정규표현식 검사를 할 수 있다.</li>
+        <li>size : 입력칸의 크기(너비)를 설정할 수 있다.</li>
+        <li>value : 값을 지정해놓을 수 있다.</li>
+        <li>autofocus : 자동으로 포커싱되게 할 수 있다.</li>
+        <li>autocomplete : on/off 입력칸 자동완성 가능 여부</li>
+        <li>maxlength : 최대 길이를 설정</li>
+        <li>min : 최소값 설정</li>
+        <li>max : 최대값 설정</li>
+        <li>step : 값의 단위를 설정</li>
+    </ul>
+
+    <h5># min/max/step Example</h5>
+
+    <!-- 속성 해당 input이 어떤 폼의 소속인지를 설정할 수도 있다. -->
+    quantity (value 20 / min 20 / max 100 / step 10) <br>
+    <input form="form1" name="quantity" type="number" 
+            min="20" max="100" step="10" value="20"> <br>
+    <input type="submit" form="form1" value="전송">
+    <input type="reset" form="form1" value="취소">
+
+    <script>
+        // 아무 의미 없어보이는 속성이더라도. 
+        // 개발자에게 전화번호라고 알려줄 수 있다는 장점이 있다.
+        tag = document.querySelector('input[type="tel"]');
+        console.dir(tag);
+
+        tag.style.color = "green";
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example</title>
+    <style>
+        #t1 {
+            background-image: url('../assets/image/초능력.jpg');
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            background-size: 400px ;
+        }
+    </style>
+</head>
+<body>
+
+<form id="regist_form" action="./10_RiverCleanupDay.html" autocomplete="off">
+
+    <table align="center" width="650" style="margin: auto;"
+                id="t1">
+        <caption>
+            <h1 style="font-weight: lighter; text-align: center;">River Cleanup Day</h1>
+            <h1 style="text-align: center;">Volunteer Registration</h1>
+            <hr>
+        </caption>
+        <tr>
+            <td><br></td>
+        </tr>
+        <tr>
+            <th align="left">
+                Full Name <br><br><br>
+            </th>
+            <td style="font-size: 12px;">
+                <input type="text" name="f_name" style="width:100px; height: 20px;"> 
+                <input type="text" name="l_name" style="height: 20px;">
+                <br>
+                First Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Last Name
+                <br><br><br>
+            </td>
+        </tr>
+        <tr>
+            <th align="left">
+                Contact No. <br><br><br>
+            </th>
+            <td style="font-size: 12px;">
+                <input type="text" name="area_code" style="width:50px; height: 20px;"> 
+                - <input type="text" name="p_number" style="width:180px; height: 20px;"> 
+                <br>
+                Area Code&nbsp;&nbsp;&nbsp; Phone Number
+                <br><br><br>
+            </td>
+        </tr>
+        <tr>
+            <th align="left">
+                E-mial <br><br><br>
+            </th>
+            <td style="font-size: 12px;">
+                <input type="email" name="email" placeholder="ex: myname@example.com" 
+                        style="width:230px; height: 20px;"> 
+                <br>
+                example@example.com
+                <br><br><br>
+            </td>
+        </tr>
+        <tr>
+            <th align="left">
+                What time can &nbsp;<br> 
+                you work? <br><br><br>
+            </th>
+            <td style="font-size: 15px;">
+                <input id="any" type="radio" name="work_time" value="any"> 
+                <label for="any">Any time</label> 
+                <br>
+                <input id="mornig" type="radio" name="work_time" value="mornig">
+                <label for="mornig">8am - Noon</label>
+                <br>
+                <input id="noon" type="radio" name="work_time" value="noon">
+                <label for="noon">1 - 5pm</label>
+                <br>
+                <input id="time_other" type="radio" name="work_time" value="other">
+                <label for="other">Other</label> 
+                <br><br>
+            </td>
+        </tr>
+        <tr>
+            <th align="left">
+                Interested in: <br><br><br><br><br><br>
+            </th>
+            <td style="font-size: 15px;">
+                <input type="checkbox" name="Interested" id="Cleaning" value="Cleaning">
+                <label for="Cleaning">Cleaning</label>
+                <br>
+                <input type="checkbox" name="Interested" id="Transportation" value="Transportation">
+                <label for="Transportation">Transportation</label>
+                <br>
+                <input type="checkbox" name="Interested" id="Wherever" value="Wherever_Needed">
+                <label for="Wherever">Wherever Needed</label>
+                <br>
+                <input type="checkbox" name="Interested" id="Food" value="Food_Service">
+                <label for="Food">Food Service</label>
+                <br>
+                <input type="checkbox" name="Interested" id="Fisrt" value="Fisrt_Aid">
+                <label for="Fisrt">Fisrt Aid</label>
+                <br>
+                <input type="checkbox" name="Interested" id="inst_other" value="other">
+                <label for="other">Other</label>
+                <br><br>
+            </td>
+        </tr>
+        <tr>
+            <th align="left"> 
+                Comments <br><br><br><br><br>
+            </th>
+            <td>
+                <textarea name="comment" cols="25" rows="6"></textarea>
+            </td>
+        </tr>
+        <tr> 
+            <td colspan="2" align="center">
+                <br><br>
+                <input type="submit" name="submit" value="Submit_Form" 
+                                        style="width: 220px;height: 40px; color: gray;">
+            </td>     
+        </tr>
+    </table>
+
+</form>
+
+</body>
+</html>

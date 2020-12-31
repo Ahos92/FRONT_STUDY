@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+</head>
+<body>
+<h3># 웹페이지에 표 출력하기</h3>
+<p>
+    table : 표의 범위 설정 태그 <br>
+    tr : table row. table 태그 내부에 사용하면 해당 테이블에 한 행을 추가 <br>
+    th : table header. tr 태그 내부에 사용하면 제목 칸 하나 추가 (굵은 글씨, 가운데 정렬) <br>
+    td : table data. tr 태그 내부에 사용하면 데이터 칸 하나 추가 <br>
+</p>
+<table border="3"> <!-- border 표에 선그리는 속성 -->
+    <tr>   
+        <th>이름</th>
+        <td>홍길동</td>
+        <td>Hong Gildong</td>
+    </tr>
+    <tr>
+        <th>가족 구성원</th>
+        <td colspan="2">4인</td> <!-- colspan 열 합치기 -->
+    </tr>
+    <tr>
+        <th>이메일</th>
+        <td colspan="2">abc@tester.com</td>
+    </tr>
+    <tr>
+        <th>주소</th>
+        <td colspan="2">~~</td>
+    </tr>
+    <tr>
+        <th rowspan="2">전화번호</th> <!-- rowspan 행 합치기 -->
+        <td colspan="2">h.p 010-1234-1234</td>
+    </tr>
+    <tr>
+        <td colspan="2">home 02-1234-1234</td>
+    </tr>
+</table>
+<hr>
+<style>
+    #t1 * > :nth-of-type(1) {
+        background-color: greenyellow;
+    }
+
+    #t1 * > :nth-of-type(2) {
+        background-color: hotpink;
+    }
+
+    #t1 * > :nth-of-type(3) {
+        background-color: skyblue;
+    }
+
+    #t1 * > :nth-of-type(4) {
+        background-image: url('../assets/image/둘리웃음.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #t1 * > :nth-of-type(4) {
+        background-color: teal;
+    }
+</style>
+<table border="1" id="t1">
+    <tr></tr>
+        <td width="50" height="30" colspan="2" rowspan="3">A <br><br><br><br></td>
+        <td width="50" height="40" rowspan="2">E <br><br></td>
+        <td width="90" colspan="3" rowspan="3">G <br><br><br><br></td>
+        <td width="70" colspan="2" rowspan="3">J <br><br><br><br></td>
+        <td width="180" colspan="3">N</td>
+    <tr>
+        <td width="140" colspan="2" rowspan="2" >O <br><br><br></td>
+        <td width="40" rowspan="2"></td>
+    </tr>
+    <tr>
+        <td height="20">F</td>
+    </tr>
+
+    <tr>
+        <td width="350" height="30" colspan="4" rowspan="3">B <br><br><br><br></td> 
+        <td>H</td>
+        <td colspan="4"></td>
+        <td colspan="2" rowspan="5">P <br><br><br><br><br><br><br></td>
+    </tr>
+    <tr>
+        <td colspan="2">I</td>
+        <td colspan="3" rowspan="3">K <br><br><br><br><br></td>
+    </tr>
+    <tr>
+        <td colspan="2"><br></td>
+    </tr>
+    <tr>
+        <td height="20" rowspan="2">C <br><br><br></td>
+        <td colspan="5" rowspan="2">D <br><br><br></td>
+    </tr>
+    <tr>
+        <td>L</td>
+        <td colspan="2">M</td>
+    </tr>
+</table>
+</body>
+</html>

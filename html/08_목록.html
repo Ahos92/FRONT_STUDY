@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+</head>
+<body>
+
+<h3># ul : unodrered list. 순서 없는 리스트. </h3>
+<!-- 
+    b : 굵은 글시
+    i : 이탤릭체
+ -->
+    <p><b>type</b>="<i>circle, disc, square, none</i>"</p>
+<ul type="square">
+    <li>붕어빵</li> <!-- list item -->
+    <li>잉어빵</li>
+    <li>국화빵</li>
+    <li>계란빵</li>
+</ul>
+<hr>
+<h3># ol : ordered list. 순서 있는 리스트.</h3>
+<p><b>type</b>="<i>1, i, I, a, A ..</i>"</p>
+<p><b>시작 번호 지정 가능 (start="")</b></p>
+<ol type="I" start="100">    
+    <li>붕어빵</li>
+    <li>잉어빵</li>
+    <li>국화빵</li>
+    <li>계란빵</li>
+</ol>
+<hr>
+<h3># dl : description list. 설명이 있는 리스트.</h3>
+<dl>
+    <dt>붕어빵</dt>
+    <dd>- 붕어처럼 생긴 빵</dd>
+    <dt>잉어빵</dt>
+    <dd>- 붕어빵보다 약간 더 큰 물고기빵</dd>
+    <dt>구고하빵</dt>
+    <dd>- 동그랗게 생긴 빵</dd>
+    <dt>계란빵</dt>
+    <dd>- 계란이 들어있는 빵</dd>
+</dl>
+<hr>
+<h1>List Example</h1>
+<ol type="I">
+    <li>List Item 1
+        <ol type="a">
+            <li>Nested Item 1.1</li>
+            <li>Nested Item 1.2</li>
+        </ol>
+    </li>
+    <li>List Item 2
+        <ol>
+            <li>Nested item 2.1</li>
+            <li>Nested item 2.2
+                <ul type="circle">
+                    <li>Nested item 2.2.1</li>
+                    <li>Nested item 2.2.2
+                        <ul>
+                            <li>Nested item 2.2.2.1</li>
+                            <li>Nested item 2.2.2.2</li>
+                        </ul>
+                    </li>
+                    <li>Nested item 2.2.3</li>
+                </ul>
+            </li>
+            <li>Nested item 2.3</li>
+        </ol>
+    </li>
+    <li>List Item 3
+        <ul type="disc">
+            <li>Nested item 3.1</li>
+            <li>Nested item 3.1</li>
+            <li>Nested item 3.1</li>
+        </ul>
+    </li>
+</ol>
+<dl>
+    <dt>COMP_29</dt>
+    <dd>Object-Oreinted Programming Ⅱ.</dd>
+    <dt>Soen 287</dt>
+    <dd>Web Programming.</dd>
+</dl>
+</body>
+</html>

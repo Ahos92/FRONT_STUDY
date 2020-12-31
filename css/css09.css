@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+}
+
+[id^="align"]{
+    border: 1px solid black;
+    margin: 3px;
+    width: 200px;
+}
+
+#align1{
+    text-align: left;
+}
+
+#align2{
+    text-align: right;
+}
+
+#align3{
+    text-align: center;
+}
+
+#align4{
+    text-align: justify;
+}
+
+[id^="vali"]{
+    border: 1px solid black;
+    margin: 10px;
+}
+[id^="vali"] > img{
+    width: 70px;
+}
+[id^="vali"] > span{
+    color: brown;
+}
+
+#valign1 > img{
+    vertical-align: top;
+}
+#valign2 > img{
+    vertical-align: middle;
+}
+#valign3 > img{
+    vertical-align: bottom;
+}
+
+#valign1 > span{
+    vertical-align: top;
+}
+#valign2 > span{
+    vertical-align: middle;
+}
+#valign3 > span{
+    vertical-align: bottom;
+}
+[id^="deco"]{
+    border: solid black 1px;
+    padding: 10px;
+}
+
+#deco1 > a{
+    text-decoration: none;
+}
+#deco2 > a{
+    text-decoration: overline dashed 3px orange;
+}
+#deco3 > a{
+    text-decoration: line-through dashed 3px orange;
+}
+#deco4 > a{
+    text-decoration: underline dashed 3px tomato;
+}
+#deco5 > a{
+    text-decoration: overline underline line-through wavy 2px rebeccapurple;
+}
+
+#transform1{
+    text-transform: uppercase;
+}
+#transform2{
+    text-transform: lowercase;
+}
+#transform3{
+    text-transform: capitalize;
+}

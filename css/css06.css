@@ -1,0 +1,15 @@
+body{
+    border: 2px solid green;
+}
+
+#div1{
+    border: 1px solid black;
+    padding: 50px 30px 150px 50px;
+    margin: 30px 100px;
+}
+
+#div2{
+    border: 1px solid black;
+    margin: 3px;
+    margin-bottom: 15px;
+}

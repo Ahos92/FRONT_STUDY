@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>링크</title>
+    <style>
+        h3:nth-of-type(1){
+            background-color: tomato;
+        }
+        h3 a{
+            background-color: greenyellow;
+        }
+        h3:nth-of-type(2){
+            background-color: chocolate;
+        }
+        h3:nth-of-type(3){
+            background-color: cornflowerblue;
+        }
+        h3:nth-of-type(4){
+            background-color: forestgreen;
+        }
+        h3:nth-of-type(5){
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+<h3># a태그로 링크 걸기</h3>
+
+<!-- a : anchor. 마우스로 클릭하면 href 속성에 정의한 URL로 이동한다. -->
+<a href="https://naver.com">Link01</a> <br> <!-- 외부의 웹 페이지로 링크-->
+<a href="./02_제목 태그.html">Link02</a> <br> <!-- 상대경로 이용한 페이지 링크-->
+<a href="../">Link03</a> <br> <!-- 보안상 매우 취약하여 거의 금지되어 있다. -->
+    <!-- 절대경로를 이용한 링크-->
+<a href="/">Link04</a> <br>
+<a href="/Users\Ahos\Desktop\사진\짤\선넘네.jpg">Link05</a> <br>
+    <!-- 상대 경로 링크(에러)-->
+<a href="naver.com">Link06 </a> <br> 
+<a href="선넘네.jpg">Link07</a> <br>
+
+<!-- a태그로 목차 만들기-->
+<a href="#chapter2">02.Chapter2</a>
+
+<!-- 가로 줄을 그어주는 태그-->
+<hr> 
+
+
+
+
+<h3># 자바스크립트를 이용해 링크 걸기</h3>
+<!-- 
+    onclick : 자바스크립트 이벤트 속성. 
+    글로벌 속성이기 때문에 모든 요소에 적용 가능
+-->
+<h5 onclick="location.href='https://naver.com'">1. onclick event</h5>
+<button onclick="location.href='https://google.com'">눌러보세요</button>
+<p onclick="move('#chapter3')">누르면 이동함</p>
+
+<script> 
+// JavaScript 영역 (웹 점유율 100%)
+/* 
+JavaScript 주석 
+
+함수는 가장먼저 메모리에 올라감
+(어느 위치에 있든 적용이됨) 
+*/
+function move(url) {
+    console.log('매개변수로 전달된 값 : ' + url);
+    location.href = url;
+}
+</script>
+
+
+
+
+<!-- 
+    id : 식별값 (링크 사용가능) / 엘리먼트들의 PK라고 생각하면 편함
+    class : 구분 지어주는 속성
+-->
+<!-- p*100 p태그 100개-->
+<hr id="chapter1">
+<h3 id="pk" class="important"># Chapter1</h3>
+<p>Content</p>
+<p class="important">Content</p>
+<p class="important">Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<hr>
+<h3 id="chapter2"># Chapter2</h3> 
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+<p>Content</p>
+
+<hr>
+<h3 id="chapter3"># Chapter3</h3>
+
+<!-- 
+    p#content$*50  => 이런형태를 Emmet이라고함
+     # : id속성
+     . : class속성
+     $ : 자동 번호부여
+     * : 만들 갯수 곱하기로표시
+-->
+<p id="content1">Contetnt</p>
+<p id="content2">Contetnt</p>
+<p id="content3">Contetnt</p>
+<p id="content4">Contetnt</p>
+<p id="content5">Contetnt</p>
+<p id="content6">Contetnt</p>
+<p id="content7">Contetnt</p>
+<p id="content8">Contetnt</p>
+<p id="content9">Contetnt</p>
+<p id="content10">Content</p>
+<p id="content11">Content</p>
+<p id="content12">Content</p>
+<p id="content13">Content</p>
+<p id="content14">Content</p>
+<p id="content15">Content</p>
+<p id="content16">Content</p>
+<p id="content17">Content</p>
+<p id="content18">Content</p>
+<p id="content19">Content</p>
+<p id="content20">Content</p>
+<p id="content21">Content</p>
+<p id="content22">Content</p>
+<p id="content23">Content</p>
+<p id="content24">Content</p>
+<p id="content25">Content</p>
+<p id="content26">Content</p>
+<p id="content27">Content</p>
+<p id="content28">Content</p>
+<p id="content29">Content</p>
+<p id="content30">Content</p>
+<p id="content31">Content</p>
+<p id="content32">Content</p>
+<p id="content33">Content</p>
+<p id="content34">Content</p>
+<p id="content35">Content</p>
+<p id="content36">Content</p>
+<p id="content37">Content</p>
+<p id="content38">Content</p>
+<p id="content39">Content</p>
+<p id="content40">Content</p>
+<p id="content41">Content</p>
+<p id="content42">Content</p>
+<p id="content43">Content</p>
+<p id="content44">Content</p>
+<p id="content45">Content</p>
+<p id="content46">Content</p>
+<p id="content47">Content</p>
+<p id="content48">Content</p>
+<p id="content49">Content</p>
+<p id="content50">Content</p>
+
+</body>
+</html>
