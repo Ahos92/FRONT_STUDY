@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 :root {
     --text: #5362F6; /* Blue */
     --shadow: #E485F8; /* Pink */
@@ -70,4 +74,32 @@ p#neon {
     text-shadow: 0px 14px 10px black,
                  0px 25px 2px gray,
                  0px 3px 0px darkgray;
+}
+
+#box_shadow1{
+    border: solid 1px black;
+    width: 200px;
+    height: 100px;
+    box-shadow: 4px 4px 5px black;
+    margin-bottom: 8px;
+}
+
+#box_shadow2 > *{
+    margin: 0;
+}
+#box_shadow2{
+    width: 300px;
+    box-shadow: 5px 5px 5px black;
+}
+#box_shadow2 > p{
+    padding: 30px;
+    background-color: green;
+}
+#box_shadow2 > p > img{
+    width: 100%;
+}
+#box_shadow2 > div.msg{
+    text-align: center;
+    padding: 50px;
+    background-color: gray;
 }

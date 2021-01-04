@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+}
+
+.red    { color: red; }
+.tomato { color: tomato; }
+.spring { color: springgreen; }
+.teal   { color: teal; }
+.peru   { color: peru; }
+.white  { color: white; }
+
+.small  { font-size: 30px; }
+.middle { font-size: 50px; }
+.big    { font-size: 70px; }
+
+.bblack { background-color: black; border-radius: 20px;}
+
+/* font awesome */
+.fab    { font-size: 3em; }
+
+.fa-4x :first-child { 
+    background: -webkit-linear-gradient(rgb(0, 0, 27), midnightblue, dodgerblue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+ }
+.fa-4x :nth-child(2){ color: blueviolet; }    
+.fa-4x :nth-child(3){ 
+    color: deepskyblue; 
+    background-color: black;
+    padding: 15px;
+    border-radius: 30px;
+}
+.fa-4x :nth-child(4){ 
+    color: white; 
+    background-color: rgb(13, 212, 13); 
+    box-shadow: 0 0 50px rgb(21, 247, 21);  
+    border-radius: 100%;
+ }
+.fa-4x :nth-child(5){ color: dodgerblue; }

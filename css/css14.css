@@ -1,0 +1,19 @@
+#example{
+    width: 500px;
+}
+#example::first-letter{
+    font-size: 30px;
+}
+#example::first-line{
+    color: red;
+}
+#example::selection{
+    color: yellow;
+    background-color: black;
+}
+#example::before{
+    content: "시작 부분이지렁~>>";
+}
+#example::after{
+    content: "<<끝 부분이지렁~";
+}
