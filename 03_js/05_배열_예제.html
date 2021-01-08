@@ -18,6 +18,7 @@
 
         // entries 키 / 값 을가진 새로운 Iterator 객체 반환
         //  keys, values
+        //  for ... of
         students = ['이상혁', '손흥민', '김연아'];
         atten = students.entries();
         for (e of atten) {
@@ -79,6 +80,28 @@
         console.log('flat(2) : ', multiArray.flat(2));
         console.log('flat(4) : ', multiArray.flat(4));
         console.log('flat(Infinity) : ', multiArray.flat(Infinity));
+
+        // array.copyWithin(복사 시작 위치, 시작 인덱스, 끝 인덱스)
+        array1 = ['a', 'b', 'c', 'd', 'e'];
+        console.log(array1.copyWithin(0, 3, 4));
+        
+        // array.reduce 정해진 함수 reducer의 연산에 따라 누적
+        const array2 = [1, 2, 3, 4];
+        const reducer = (accumulator, currentValue) => accumulator + currentValue; // accumulator - 누적되는 장소(누산기)
+        
+        console.log(array2.reduce(reducer));
+
+        console.log(array2.reduce(reducer, 5)); // 5 + 1 + 2 + 3 + 4
+
+        // 1. reduce()를 이용해 배열 내에서 최대값(또는 최소값) 구하기
+        const reducer03 = (a, b) => a > b ? a : b;
+        console.log('배열 내 최대 값 : ', array2.reduce(reducer03));
+        console.log('배열 내 최소 값 : ', array2.reduce((a, b) => a < b ? a : b));
+
+        // callback
+        //  - 어떤 함수가 작동 할때 호출하는 함수
+        //  - 해당 자리에 함수를 정의해 놓으면 필요할 때마다 호출 된다.
+        //  - ex) addActionListener(callback), addMouselistener(callback) ...
     </script>
 </body>
 </html>

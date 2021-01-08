@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+}
+
+.btn{
+    font-size: 20px;
+}
+
+.lottobox{
+    display: flex;
+    justify-content: center;
+}
+
+.lottobox > * {
+    background-color:  mediumaquamarine;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    font: 30px bolder;
+    color: white;
+    margin:5px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+#lotto6{
+    background-color: mediumpurple;
+}
+
+#lottoplus{
+    color: black;
+    font: 60px;
+    background-color: white;
+}
