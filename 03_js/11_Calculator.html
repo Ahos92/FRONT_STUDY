@@ -7,6 +7,7 @@
     <style>
         *{
             box-sizing: border-box;
+            user-select: none;
         }
 
         .cal{
@@ -14,6 +15,9 @@
             height: 380px;
             display: grid;
             
+            padding: 20px;
+            background-color: dimgray;
+
             grid-template-areas: "temp temp temp temp"
                                  "result result result result"
                                  "one two three plus"
@@ -23,39 +27,63 @@
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: 30px 50px auto;
             
+            border-radius: 10px;
+            box-shadow: 3px -3px 10px black;
         }
 
         .cal > button {
-            border-radius: 5px;
+            border-radius: 50%;
         }
 
         button {
             font-size: 20px;
             font-weight: bold;
+            margin: 4px;
+            box-shadow: 2px 2px 5px black;
+        }
+
+        button:hover{
+            background-color: burlywood;
+            cursor: pointer;
+        }
+
+        button:active{
+            box-shadow: 0 0 0 black;
+        }
+
+        /* 클릭스 테두리 제거 */
+        button:focus{
+            outline: none;
+            border: none;
         }
 
         textarea{
             text-align: right;
             resize: none;
+            background-color: rgb(183, 241, 96);
         }
 
         #temp{
             grid-area: temp;
             font-size: 15px;
             color: gray;
-            border: 2px solid black;
             border-top-left-radius: 5px;
             border-top-right-radius: 5px;
             border-bottom: 0px;
+            border-top: black 3px solid;
+            border-left: black 3px solid;
         }
 
         #result{
             grid-area: result;
             font-size: 35px;
             font-weight: bold;
-            border: 2px solid black;
+            border-left: 3px solid black;
             border-top: 0px;
             border-bottom: 0px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            margin-bottom: 5px;
         }
 
         #one{grid-area: one;}
@@ -77,6 +105,8 @@
         #minus{grid-area: minus; background-color: sandybrown;}
         #divide{grid-area: divide; background-color: sandybrown;}
         #multi{grid-area: multi; background-color: sandybrown;}
+
+       
 
     </style>
 </head>
@@ -131,9 +161,11 @@
         // 기호 버튼 이벤트
         operBtnClick = (op) => { 
             reg = temp.value.charAt(temp.value.length-2);
+            eqreg = temp.value.charAt(temp.value.length-1);
             if(temp.value === "" || reg == "+" || reg == "-" || reg == "/" || reg == "*"){
-
-            } else if(reg == "="){
+                alert("잘못된 입력입니다.")
+                
+            } else if(eqreg == "="){
                 temp.innerHTML = result.value + ` ${op} `;
 
             } else {
@@ -151,7 +183,7 @@
         function equlBtnClick() {
             reg = temp.value.charAt(temp.value.length-1);
             if(temp.value === "" || reg === " " || reg === "=") {
-
+                alert("잘못된 입력입니다.")
             } else{
                 temp.innerHTML += " =";
                 result.innerHTML = total();
