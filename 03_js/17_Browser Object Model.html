@@ -13,6 +13,20 @@
     <li>window 객체를 사용한다. (window객체는 항상 생략이 가능하다)</li>
 </ul>
 
+<h3># history</h3>
+
+<button onclick="window.history.back()">back</button>
+<button onclick="window.history.forward()">forward</button>
+<button onclick="window.history.go(-2)">두 페이지 뒤로가기</button>
+
+<hr>
+
+<h3># timer</h3>
+<!-- HTML속성으로 이벤트를 추가하면 로딩이 끝난 이후에 생성된 함수는 사용할 수 없다. -->
+<button id="on" onclick="dobae_on()">도배 ON</button>
+<button id="off" onclick="dobae_off()">도배 OFF</button>
+
+<div id="poll"></div>
 
 <script>
     // # window : 최상위 BOM
@@ -38,6 +52,52 @@
 
     // # window.navigator : 사용자의 브라우저 정보를 알 수 있다.
     console.log(window.navigator);
+
+    // # window의 팝업 메서드들
+    const pollDiv = document.getElementById("poll");
+
+    const popupSet = () => {
+        window.alert("alert box!");
+        var age = window.prompt("당신의 나이를 입력하세요.", "10"); // (메세지, default 값) , return type -> String
+        var confirm = window.confirm("난이도가 어렵니?"); // return type -> boolean
+        
+        pollDiv.innerHTML = (`<p>나이 : ${age}<br>선택 : ${confirm?'어려워요':'아니요'}</p>`);
+    };
+
+    /* 
+        # window의 타이머 메서드들 
+    */
+    window.onload = () => {
+        // setTimeout(callback, Time(millisec)) : 설정한 시간 뒤에 한 번 실행한다.
+        var timeout1 = window.setTimeout(popupSet, 5000);
+        
+        // setInterval(callback, Interval(millisec)) : 일정 시간 마다 한번씩 실행한다. 
+        var interval1 = window.setInterval(() => {
+            pollDiv.innerHTML += `<span style="color: red;">안녕하세요 !</span>`;
+        }, 100);
+        
+        // clearTimeout(timer instance) : 전달한 타이머를 중지 시킨다.
+        window.clearTimeout(timeout1);
+        window.clearInterval(interval1);
+    };
+
+
+    var dobae_itv = undefined;
+    dobae_on = () => {
+        if (dobae_itv === undefined){
+            dobae_itv = window.setInterval(() => {
+                pollDiv.innerHTML += `<span style="color: red;">안녕하세요 !</span>`;
+            }, 100);
+        }
+        // console.log("인터벌 생성 직후의 인터벌 값", dobae_itv);
+    }
+    dobae_off = () => {
+        if (dobae_itv !== undefined){
+            window.clearInterval(dobae_itv);
+            dobae_itv = undefined;
+        }
+        // console.log("클리어 직후의 인터벌 값", dobae_itv);
+    }
 
 </script>
 
